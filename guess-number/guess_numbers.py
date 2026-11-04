@@ -1,9 +1,12 @@
 from random import randint
 
-secret_number = randint(1 ,100)
-attempts = 0
-
 while True:
+
+ secret_number = randint(1 ,100)
+ attempts = 0
+ print("\n--- New Game Started! ---")
+
+ while True:
     try:
        
        guess = int(input("Guess the number(1-100):"))
@@ -19,5 +22,10 @@ while True:
         print("Too high!")
     except ValueError:
         print("Invallid input! Please enter a valid number")
+
+ play_again = input("Do you want to play again , yes /no ?").strip().lower()
+ if  play_again !=  "yes":    
+    print("Thanks for playing! Goodbye!")
+    break
 
 
